@@ -1,0 +1,159 @@
+
+
+{% extends 'base.html' %}
+{% block  title %}Credit Voucher{% endblock %}
+{% load static %}
+
+{% block css %}
+<link href="{% static 'assets/plugins/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+{% endblock css %}
+    
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="main-content">
+   
+        <div class="content-header">
+            <div class="page-header m-0">
+                <h4 class="page-title">Credit Voucher</h4>
+                <ul class="breadcrumbs">
+                    <li class="nav-home">
+                        <a href="#">
+                            <i class="typcn typcn-home-outline"></i>
+                        </a>
+                    </li>
+                    <li class="separator">
+                        <i class="ti-angle-right"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Accounts</a>
+                    </li>
+                    <li class="separator">
+                        <i class="ti-angle-right"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Credit Voucher</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#ID</th>
+                            <th>Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Dimosons</th>
+                            <th scope="col">Spots</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Production Date</th>
+                            <th scope="col" class="text-end">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td><img src="https://www.google.com/url?sa=i&url=http%3A%2F%2Ft0.gstatic.com%2Flicensed-image%3Fq%3Dtbn%3AANd9GcTUNYRJGfr6dAmrrvtz8mF5qV0ojVV9cuEFzswwOcfqxd4EDeDD05eO-KSs2uLidN92YVgeCdcpdthCF4E&psig=AOvVaw2U-BDSZf0NepZ5dGwQYe-b&ust=1673505414894000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNDy9M_zvvwCFQAAAAAdAAAAABAE" alt="potato" width="45" height="45"></td>
+                            <td><b>Potato</b></td>
+                            <td>Lorem ipsum dolor sit amet...</td>
+                            <td>2cm</td>
+                            <td>Red</td>
+                            <td>30</td>
+                            <td>3</td>
+                            <td>$320</td>
+                            <td><span class="badge rounded-pill alert-warning">Pending</span></td>
+                            <td>03.12.2020</td>
+                            <td class="text-end">
+                                <a href="#" class="btn btn-md rounded font-sm">Detail</a>
+                                <div class="dropdown">
+                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-light rounded btn-sm font-sm"> <i class="material-icons md-more_horiz"></i> </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">View detail</a>
+                                        <a class="dropdown-item" href="#">Edit info</a>
+                                        <a class="dropdown-item text-danger" href="#">Delete</a>
+                                    </div>
+                                </div>
+                                <!-- dropdown //end -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><img src="https://www.google.com/url?sa=i&url=http%3A%2F%2Ft0.gstatic.com%2Flicensed-image%3Fq%3Dtbn%3AANd9GcTUNYRJGfr6dAmrrvtz8mF5qV0ojVV9cuEFzswwOcfqxd4EDeDD05eO-KSs2uLidN92YVgeCdcpdthCF4E&psig=AOvVaw2U-BDSZf0NepZ5dGwQYe-b&ust=1673505414894000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNDy9M_zvvwCFQAAAAAdAAAAABAE" alt="potato" width="45" height="45"></td>
+                            <td><b>Paddy</b></td>
+                            <td>Lorem ipsum dolor sit amet...</td>
+                            <td>2cm</td>
+                            <td>Red</td>
+                            <td>30</td>
+                            <td>3</td>
+                            <td>$320</td>
+                            <td><span class="badge rounded-pill alert-warning">Pending</span></td>
+                            <td>03.12.2020</td>
+                            <td class="text-end">
+                                <a href="#" class="btn btn-md rounded font-sm">Detail</a>
+                                <div class="dropdown">
+                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-light rounded btn-sm font-sm"> <i class="material-icons md-more_horiz"></i> </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">View detail</a>
+                                        <a class="dropdown-item" href="#">Edit info</a>
+                                        <a class="dropdown-item text-danger" href="#">Delete</a>
+                                    </div>
+                                </div>
+                                <!-- dropdown //end -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><img src="https://www.google.com/url?sa=i&url=http%3A%2F%2Ft0.gstatic.com%2Flicensed-image%3Fq%3Dtbn%3AANd9GcTUNYRJGfr6dAmrrvtz8mF5qV0ojVV9cuEFzswwOcfqxd4EDeDD05eO-KSs2uLidN92YVgeCdcpdthCF4E&psig=AOvVaw2U-BDSZf0NepZ5dGwQYe-b&ust=1673505414894000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNDy9M_zvvwCFQAAAAAdAAAAABAE" alt="potato" width="45" height="45"></td>
+                            <td><b>Tomato</b></td>
+                            <td>Lorem ipsum dolor sit amet...</td>
+                            <td>2cm</td>
+                            <td>Red</td>
+                            <td>30</td>
+                            <td>3</td>
+                            <td>$320</td>
+                            <td><span class="badge rounded-pill alert-warning">Pending</span></td>
+                            <td>03.12.2020</td>
+                            <td class="text-end">
+                                <a href="#" class="btn btn-md rounded font-sm">Detail</a>
+                                <div class="dropdown">
+                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-light rounded btn-sm font-sm"> <i class="material-icons md-more_horiz"></i> </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">View detail</a>
+                                        <a class="dropdown-item" href="#">Edit info</a>
+                                        <a class="dropdown-item text-danger" href="#">Delete</a>
+                                    </div>
+                                </div>
+                                <!-- dropdown //end -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- table-responsive //end -->
+        </div>
+        <!--/.body content-->
+</div>
+    <!--/.main content-->
+
+{% endblock  %}
+
+
+{% block js %}
+
+<!-- Third Party Scripts(used by this page)-->
+    <script src="{% static 'assets/plugins/datatables/dataTables.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatables/dataTables.bootstrap4.min.js' %}"></script>
+    <!--Page Active Scripts(used by this page)-->
+    <script src="{% static 'assets/plugins/datatables/data-basic.active.js' %}"></script>
+  
+
+{% endblock js %}
+

@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% block  title %}Chart of Accounts{% endblock %}
+{% load static %}
+
+{% block css %}
+<link href="{% static 'assets/plugins/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+ <style>
+   .toggle{
+      display: block !important;
+   }
+ </style>
+{% endblock %}
+    
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="main-content">    
+        <!--Content Header (Page header)-->
+        <div class="content-header row align-items-center g-0">
+
+            <div class="col-sm-8 header-title">
+                <div class="d-flex align-items-center">
+                    <div class="header-icon d-flex align-items-center justify-content-center rounded shadow-sm text-success flex-shrink-0">
+                        <i class="typcn typcn-tree"></i>
+                    </div>
+                    <div class="">
+                        <h1 class="fw-bold">Tree View</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.Content Header (Page header)-->
+        <div class="body-content">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="fs-17 fw-semi-bold mb-0">Tree View</h6>
+                        </div>
+                        <div class="text-end">
+                            <div class="actions">
+                                <a href="#" class="action-item"><i class="ti-reload"></i></a>
+                                <div class="dropdown action-item">
+                                    <a href="#" class="action-item" data-bs-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                                    <div class="dropdown-menu">
+                                        <a href="#" class="dropdown-item">Refresh</a>
+                                        <a href="#" class="dropdown-item">Manage Widgets</a>
+                                        <a href="#" class="dropdown-item">Settings</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6" id="treeLoad">
+                           <ul id="tree1" class="tree">
+                              <li class="branch">
+                                
+                                 <a href="#" class="branchBtn">
+                                    <i class="indicator fas fa-folder-open far"></i>
+                                    Chart Of Account</a>
+                                 <ul style="display: none;">
+                                    <li class="head">                                      
+                                        <a href="#" class="branchBtn">
+                                          <i class="indicator fas fa-folder-open far"></i>   
+                                          Assets</a>
+                                         <ul style="display: none;">
+                                          <li>Student Receive</li>
+                                          <li>Staff Receive</li>
+                                          <li>
+                                           
+                                             <a href="#" class="branchBtn">
+                                                <i class="indicator fas fa-folder-open far"></i>
+                                                Students</a>
+                                                 <ul style="display:none;">
+                                                   <li>Student Receive</li>
+                                                   <li>Staff Receive</li>
+                                                   <li>Teacher Receive</li>
+                                                 </ul>                                                
+                                          </li>
+                                         </ul>
+                                       </li>
+                                    <li class="head">                                      
+                                        <a href="#" class="branchBtn">
+                                          <i class="indicator fas fa-folder-open far"></i>   
+                                          Liability</a>
+                                         <ul style="display: none;">
+                                          <li>Student Receive</li>
+                                          <li>Staff Receive</li>
+                                          <li>
+                                           
+                                             <a href="#" class="branchBtn">
+                                                <i class="indicator fas fa-folder-open far"></i>
+                                                Students</a>
+                                                 <ul style="display:none;">
+                                                   <li>Student Receive</li>
+                                                   <li>Staff Receive</li>
+                                                   <li>Teacher Receive</li>
+                                                 </ul>                                                
+                                          </li>
+                                         </ul>
+                                       </li>
+                                    <li class="head">                                      
+                                        <a href="#" class="branchBtn">
+                                          <i class="indicator fas fa-folder-open far"></i>   
+                                          Income</a>
+                                         <ul style="display: none;">
+                                          <li>Student Receive</li>
+                                          <li>Staff Receive</li>
+                                          <li>
+                                           
+                                             <a href="#" class="branchBtn">
+                                                <i class="indicator fas fa-folder-open far"></i>
+                                                Students</a>
+                                                 <ul style="display:none;">
+                                                   <li>Student Receive</li>
+                                                   <li>Staff Receive</li>
+                                                   <li>Teacher Receive</li>
+                                                 </ul>                                                
+                                          </li>
+                                         </ul>
+                                       </li>
+                                    <li class="head">                                      
+                                        <a href="#" class="branchBtn">
+                                          <i class="indicator fas fa-folder-open far"></i>   
+                                          Expenses</a>
+                                         <ul style="display: none;">
+                                          <li>Student Receive</li>
+                                          <li>Staff Receive</li>
+                                          <li>
+                                           
+                                             <a href="#" class="branchBtn">
+                                                <i class="indicator fas fa-folder-open far"></i>
+                                                Students</a>
+                                                 <ul style="display:none;">
+                                                   <li>Student Receive</li>
+                                                   <li>Staff Receive</li>
+                                                   <li>Teacher Receive</li>
+                                                 </ul>                                                
+                                          </li>
+                                         </ul>
+                                       </li>
+                               
+                                
+                                 
+                                   
+                                 </ul>
+                              </li>
+                           </ul>
+                        </div>
+                        
+                        <div class="col-lg-6" id="myDIV" style="display: block;">
+                           <div class="card mb-4">
+                              <div class="card-body">
+                                 <div id="currentForm" style="display: block;">
+                                    <div class="mb-3 row">
+                                       <label class="col-sm-4 col-form-label text-start fw-semi-bold">Account
+                                       Code</label>
+                                       <div class="col-sm-8">
+                                          <input class="form-control" type="text" value="" id="account_code" disabled="">
+                                       </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                       <label class="col-sm-4 col-form-label text-start fw-semi-bold">Account
+                                       Name</label>
+                                       <div class="col-sm-8">
+                                          <input class="form-control" type="text" value="" id="account_name">
+                                       </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                       <label class="col-sm-4 col-form-label text-start fw-semi-bold">Parent
+                                       </label>
+                                       <div class="col-sm-8">
+                                          <input class="form-control" type="text" value="" id="parent_id" disabled="">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div id="addForm" style="display: none;">
+                                    <div class="mb-3 row">
+                                       <label class="col-sm-4 col-form-label text-start fw-semi-bold">Account
+                                       Code</label>
+                                       <div class="col-sm-8">
+                                          <input class="form-control" type="text" value="" id="new_account_code" disabled="">
+                                       </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                       <label class="col-sm-4 col-form-label text-start fw-semi-bold">Account
+                                       Name</label>
+                                       <div class="col-sm-8">
+                                          <input class="form-control" type="text" value="" id="new_account_name">
+                                       </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                       <label class="col-sm-4 col-form-label text-start fw-semi-bold">Parent
+                                       </label>
+                                       <div class="col-sm-8">
+                                          <input class="form-control" type="text" value="" id="new_parent_id" disabled="">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="mb-3 row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8 d-flex justify-content-start gap-1" style="font-size: 12px;">
+                                       <div class="form-check form-check-inline" id="active" style="display: block; float: left;">
+                                          <input class="form-check-input" type="checkbox" i="" id="is_active" name="vehicle1" value="option1">
+                                          <label class="form-check-label" for="is_active">Is Active</label>
+                                       </div>
+                                       <div class="form-check form-check-inline" id="stock" style="display: block; float: left;">
+                                          <input class="form-check-input" type="checkbox" id="is_stock" name="vehicle1" value="option1">
+                                          <label class="form-check-label" for="is_stock">Is Stock</label>
+                                       </div>
+                                       <div class="form-check form-check-inline" id="fixed_asset" style="display: block; float: left;">
+                                          <input class="form-check-input" type="checkbox" id="is_fixed_asset" name="vehicle1" value="option1">
+                                          <label class="form-check-label" for="is_fixed_asset">Is Fixed Asset</label>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="mb-3 row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-8 d-flex justify-content-start  gap-1">
+                                       <button class="btn btn-sm btn-outline-success" id="newForm" style="width: 65px; height: 30px; text-align: center; display: block;">New</button>
+                                       <button class="btn btn-sm btn-outline-success" id="saveForm" style="display: none; width: 65px; height: 30px;text-align: center;">Save</button>
+                                       <button class="btn btn-sm btn-outline-success" id="updateForm" style="display: block; width: 65px; height: 30px; text-align: center;">Update</button>
+                                       <button class="btn btn-sm btn-outline-success" id="deleteAction" style="display: block; width: 65px; height: 30px; text-align: center;">Delete</button>
+                                       <button class="btn btn-sm btn-outline-success" id="undoForm" style="display: none; width: 65px; height: 30px;text-align: center;">Undo</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        
+                           
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--/.body content-->
+    </div>
+    <!--/.main content-->
+   
+    <!--/.footer content-->
+    <div class="overlay"></div>
+</div>
+
+{% endblock %}
+{% block js %}
+
+<!-- Third Party Scripts(used by this page)-->
+
+    <script src="{% static 'assets/plugins/datatables/dataTables.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatables/dataTables.bootstrap4.min.js' %}"></script>
+    <!--Page Active Scripts(used by this page)-->
+    <script src="{% static 'assets/plugins/datatables/data-basic.active.js' %}"></script>
+   
+   <script>
+ 
+      $(document).on("click",".branchBtn",function(){
+          $(this).next("ul").toggleClass("toggle")
+     })
+     
+   
+   </script>
+
+{% endblock  %}

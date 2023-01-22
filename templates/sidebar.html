@@ -1,0 +1,210 @@
+{% load static %}
+<nav class="sidebar sidebar-bunker" style="overflow-y: auto;">
+    <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+            <img class="sidebar-brand_icon" src="https://www.bdtask.com/asset/img/bdtask-logo.webp" alt="">
+
+        </a>
+    </div>
+    <!--/.sidebar header-->
+    <div class="profile-element d-flex align-items-center flex-shrink-0">
+        <div class="avatar online">
+            <img src="{% static 'assets/dist/img/man6.png' %}" class="img-fluid rounded-circle" alt="">
+        </div>
+        <div class="profile-text">
+            <h6 class="m-0">Naeem Khan</h6>
+            <span>example@gmail.com</span>
+        </div>
+    </div>
+    <!--/.profile element-->
+    <form class="search sidebar-form" action="#" method="get">
+        <div class="search__inner">
+            <input type="text" class="search__text" placeholder="Search...">
+            <i class="typcn typcn-zoom-outline search__helper" data-sa-action="search-close"></i>
+        </div>
+    </form>
+    <!--/.search-->
+    <div class="sidebar-body">
+        <nav class="sidebar-nav">
+            <ul class="metismenu">
+                <li class="nav-label">
+                    <span class="nav-label_text">Main Menu</span>
+                    <small class="ti-more-alt nav-label_ellipsis"></small>
+                </li>
+                
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="typcn typcn-home-outline"></i> Dashboard
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Default</a></li>
+                        <li><a href="dashboard_two.html">Dashboard Two</a></li>
+                    </ul>
+                </li>
+               
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="hvr-buzz-out fab fa-product-hunt"></i> Category
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Add category</a></li>
+                        <li><a href="dashboard_two.html">category List</a></li>
+                      
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="hvr-buzz-out fab fa-product-hunt"></i> Products
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Add Products</a></li>
+                        <li><a href="dashboard_two.html">Product List</a></li>
+                        <li><a href="dashboard_two.html">Reviews</a></li>
+                        <li><a href="dashboard_two.html">Categories</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="hvr-buzz-out fas fa-user-clock"></i>Vendors
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Vendor List</a></li>
+                       
+                    </ul>
+                </li>
+               
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="hvr-buzz-out fas fa-user-clock"></i>Customers
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Customer List</a></li>
+                       
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="hvr-buzz-out fas fa-comment-dots"></i> Bids
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Bids List</a></li>
+                       
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="hvr-buzz-out fas fa-money-check"></i>  Marchants
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Marchants List</a></li>
+                       
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="hvr-buzz-out fas fa-hand-holding-usd"></i> Sales
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Sales List</a></li>
+                       
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="fa fa-truck" aria-hidden="true"></i> Delivery
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Delivery List</a></li>
+                       
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="typcn typcn-home-outline"></i> Reports
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="index.html">Sale Reports</a></li>
+                        <li><a href="index.html">Bids Reports</a></li>
+                       
+                    </ul>
+                </li>
+              
+
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="typcn typcn-home-outline"></i> Settings
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="{% url 'dashboard:slider-setting'%}">Slider Settings</a></li>
+                        <li><a href="{% url 'dashboard:advertisment'%}">Advertisement</a></li>
+                        <li><a href="{% url 'dashboard:add-banner-view'%}">Add Banner Area</a></li>
+                        <li><a href="{% url 'dashboard:home-page-section'%}">Home Page Section</a></li>
+                        <li><a href="{% url 'dashboard:product-review'%}">Product Review</a></li>
+                        <li><a href="{% url 'dashboard:subscriber'%}">Subscriber</a></li>
+                        <li><a href="{% url 'dashboard:bid-settings'%}">Bid Settings</a></li>
+                        <li><a href="{% url 'dashboard:quality-setting'%}">Quanlity Settings(OCR)</a></li>
+                        <li><a href="{% url 'dashboard:shipping-method'%}">Shipping Method</a></li>
+                        <li><a href="{% url 'dashboard:seo-setting'%}">SEO Settings</a></li>
+                        <li><a href="{% url 'dashboard:social-media'%}">Social Media</a></li>
+                        <li><a href="{% url 'dashboard:about-us'%}">About Us</a></li>
+                        <li><a href="{% url 'dashboard:privacy-policy'%}">Privacy Policy</a></li>
+                        <li><a href="{% url 'dashboard:language-setting'%}">Language Settings</a></li>
+                        <li><a href="{% url 'dashboard:sms-config'%}">SMS Configurations</a></li>
+                        <li><a href="{% url 'dashboard:payment-gateway'%}">Payment Gateway</a></li>
+                        <li><a href="{% url 'dashboard:manage-cupon'%}">Manage Cupon</a></li>
+                      
+                       
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="has-arrow material-ripple" href="#">
+                        <i class="hvr-buzz-out fas fa-user-lock"></i>Accounts
+                    </a>
+                    <ul class="nav-second-level">
+                        <li><a href="{% url 'accounts:financial-year' %}">Financial year</a></li>
+                        <li><a href="{% url 'accounts:chart-of-account' %}">Chart of Accounts</a></li>
+                        <li><a href="{% url 'accounts:sub-account' %}">Sub Accounts</a></li>
+                        <li><a href="{% url 'accounts:predifind-account' %}">Predifined Account</a></li>
+                        <li><a href="{% url 'accounts:opening-balance' %}">Opening Balance</a></li>
+                        <li><a href="{% url 'accounts:debit-voucher' %}">Debit Voucher</a></li>
+                        <li><a href="{% url 'accounts:credit-voucher' %}">Credit Voucher</a></li>
+                        <li><a href="{% url 'accounts:contra-voucher' %}">Contra Voucher</a></li>
+                        <li><a href="{% url 'accounts:journal-voucher' %}">Journal Voucher</a></li>
+                        <li><a href="{% url 'accounts:bank-reconcilation' %}">Bank Reconcilation</a></li>
+                        <li><a href="{% url 'accounts:sub-account' %}">Voucher Approval</a></li>
+                        <li>  
+                        <a class="has-arrow material-ripple" href="#" style="color:white;background: rgba(0, 0, 0, 0.755);">
+                            <i class="typcn typcn-home-outline"></i> Accounts Reports
+                        </a>
+                        <ul class="nav-second-level" style="margin-left:30px; color:black">
+                            <li><a href="index.html" style="color:rgba(0, 0, 0, 0.755);">Cashbook</a></li>
+                            <li><a href="index.html" style="color:rgba(0, 0, 0, 0.755);;">Bank Book</a></li>
+                            <li><a href="index.html" style="color:rgba(0, 0, 0, 0.755);;">City Bank</a></li>
+                            <li><a href="index.html" style="color:rgba(0, 0, 0, 0.755);;">General Ledger</a></li>
+                            <li><a href="index.html" style="color:rgba(0, 0, 0, 0.755);;">Sub Ledger</a></li>
+                            <li><a href="index.html" style="color:rgba(0, 0, 0, 0.755);;">Profit Loss</a></li>
+                            <li><a href="index.html" style="color:rgba(0, 0, 0, 0.755);;">Trial Balance</a></li>
+                            <li><a href="index.html" style="color:rgba(0, 0, 0, 0.755);;">Balance Sheet</a></li>
+                           
+                           
+                        </ul>
+                    
+                    </li>
+                    
+                       
+                    </ul>
+                </li>
+                <li>
+                    <a href="chat.html"><i class="typcn typcn-messages"></i> Profiles</a>
+                </li>  
+                 
+               
+               
+              
+            </ul>
+        </nav>
+    </div>
+    <!-- sidebar-body -->
+</nav>

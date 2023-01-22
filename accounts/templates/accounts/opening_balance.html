@@ -1,0 +1,282 @@
+
+{% extends 'base.html' %}
+{% block  title %}Opening Balance{% endblock %}
+{% load static %}
+
+{% block css %}
+<link href="{% static 'assets/plugins/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+{% endblock css %}
+    
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="main-content">
+        <div class="content-header d-flex justify-content-between">
+            <div class="page-header m-0">
+                <h4 class="page-title">Opening Balance</h4>
+                <ul class="breadcrumbs">
+                    <li class="nav-home">
+                        <a href="#">
+                            <i class="typcn typcn-home-outline"></i>
+                        </a>
+                    </li>
+                    <li class="separator">
+                        <i class="ti-angle-right"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">accounts</a>
+                    </li>
+                    <li class="separator">
+                        <i class="ti-angle-right"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Opening Balance</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Button trigger modal -->
+            <div class="modal-button">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Add Opening Balance 
+                </button>
+            </div>
+        </div>
+
+        <div class="body-content">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="fs-17 fw-semi-bold mb-0">Project status</h6>
+                        </div>
+                        <div class="text-end">
+                            <div class="actions">
+                                <a href="#" class="action-item"><i class="ti-reload"></i></a>
+                                <div class="dropdown action-item">
+                                    <a href="#" class="action-item" data-bs-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                                    <div class="dropdown-menu">
+                                        <a href="#" class="dropdown-item">Refresh</a>
+                                        <a href="#" class="dropdown-item">Manage Widgets</a>
+                                        <a href="#" class="dropdown-item">Settings</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                    
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                     
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Opening Balance</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                
+                        </div>
+
+                        <form>
+                            
+                            <div class="form-group row mb-2">
+                                <label for="example-date-input" class="col-sm-3 col-form-label"> Financial Year </label>
+                                <div class="col-sm-4">
+                                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-2">
+                                <label for="example-date-input" class="col-sm-3 col-form-label"> Date </label>
+                                <div class="col-sm-4">
+                                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                                </div>
+                            </div>
+                            
+                            <div class="container">
+                                <table class="table table-bordered mt-5">
+                                    <thead>
+                                      <tr>
+                                            <th>Account Name</th>
+                                            <th>Sub type</th>
+                                            <th>Debit</th>
+                                            <th>Credit</th>
+                                            <th>Action</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="copytable">
+                                        <tr>
+                                          <td scope="row">
+                                              <select class="form-select" id="sel1" name="sellist1">
+                                                  <option>Please select One</option>
+                                                  <option>Personal Account</option>
+                                                  <option>Nominal Account</option>
+                                              </select>
+                                          </td>
+                                          
+                                          <td><input class="form-control" type="text" value="" id="example-date-input" name="subtype" placeholder="subtype"></td>
+                                          <td><input class="form-control amount" type="text" value="" id="example-date-input" name="Debit" placeholder="0.00"></td>
+                                          <td><input class="form-control amount2" type="text" value="" id="example-date-input" name="Credit" placeholder="0.00"></td>
+                                          <td></td>
+                                        </tr>
+                                        
+                                       
+                                        
+                                      </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td scope="row">
+                                                <button type="button" class="btn btn-dark addMoreBtn">Add More</button>
+                                            </td>
+                                            <td scope="col"><b>Total</b></td>
+                                            <td><input id="debitsum" class="form-control" type="text" value="" id="example-date-input" name="TotalDebit" placeholder="TotalDebit" ></td>
+                                            <td><input id="creditsum" class="form-control" type="text" value="" id="example-date-input" name="TotalCredit" placeholder="TotalCredit"></td>
+                                          </tr>
+                                    </tfoot>
+                                  </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                        </form>
+
+                        
+                    </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- data-table start -->
+                    <div class="body-content">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table display table-bordered table-striped table-hover basic">
+                                        <thead>
+                                            <tr>
+                                                <th>Voucher No</th>
+                                                <th>Year</th>
+                                                <th>Date</th>
+                                                <th>Account Name</th>
+                                                <th>Sub type</th>
+                                                <th>Debit</th>
+                                                <th>Credit</th>
+                                                <th>action</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>      
+                                        
+                                            <tr>
+                                                <td>DV-01</td>
+                                                <td>2020</td>
+                                                <td>2011/06/27</td>
+                                                <td>Student Receivable</td>
+                                                <td>ABC Student</td>
+                                                <td>15000</td>
+                                                <td>12000</td>
+                                                <td>
+                                                    <button class="btn-outline-success btn">
+                                                        <i class='far fa-edit'></i>
+                                                    </button>
+                                                    <button class="btn-outline-danger btn">
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    </button>
+                                            </tr>
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <!-- data-table end -->
+                </div>
+            </div>
+        </div>
+        <!--/.body content-->
+</div>
+    <!--/.main content-->
+
+    
+{% endblock  %}
+
+
+{% block js %}
+
+<!-- Third Party Scripts(used by this page)-->
+    <script src="{% static 'assets/plugins/datatables/dataTables.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatables/dataTables.bootstrap4.min.js' %}"></script>
+    <!--Page Active Scripts(used by this page)-->
+    <script src="{% static 'assets/plugins/datatables/data-basic.active.js' %}"></script>
+ 
+<script>
+    let counter = 1;
+    let singleElement = `
+    <tr>
+        <td scope="row">
+            <select class="form-select" id="sel1" name="sellist1">
+                <option>Please select One</option>
+                <option>Personal Account</option>
+                <option>Nominal Account</option>
+            </select>
+        </td>
+        </td>
+        <td><input class="form-control" type="text" value="" id="example-date-input" name="LedgerComment" placeholder="Comment"></td>
+        <td><input class="form-control amount" type="text" value="" id="example-date-input" name="Debit" placeholder="0.00"></td>
+        <td><input class="form-control amount2" type="text" value="" id="example-date-input" name="Credit" placeholder="0.00"></td>
+        <td><button type="button" class="btn btn-danger removeBtn">Remove</button></td>
+    </tr>
+    
+      `;
+    let element=$("#copytable")
+    $('.addMoreBtn').on('click', function () {
+     element.append(singleElement);
+    });
+  
+    $(document).on('click',".removeBtn", function () {
+        $(this).parent().parent().remove();
+        total_calculation()
+        total_calculations()
+    });
+
+
+    let totalShow = $("#debitsum")
+    function total_calculation(){      
+        var amountBox = $('.amount');
+        var sum=0
+        for(var i=0; i<amountBox.length;i++){
+           sum+=Number(amountBox[i].value)   
+        }    
+       totalShow.val(parseFloat(sum).toFixed(2))
+        
+    }
+        $(document).on("keyup",".amount",function(){
+        total_calculation()
+         
+    })
+
+
+    let totalShows = $("#creditsum")
+    function total_calculations(){      
+        var amountBoxs = $('.amount2');
+        var sums=0
+        for(var j=0; j<amountBoxs.length;j++){
+           sums+=Number(amountBoxs[j].value)
+        }    
+       totalShows.val(parseFloat(sums).toFixed(2))
+        
+    }
+        $(document).on("keyup",".amount2",function(){
+        total_calculations()
+         
+    })
+
+  </script>
+  
+
+{% endblock js %}
+
